@@ -1,0 +1,1 @@
+console.log("Waste Management System loaded successfully!");
