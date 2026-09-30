@@ -6,32 +6,38 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f7f5;
+    background: #f5f7f5;
     color: #222;
+    line-height: 1.6;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
-    background-color: white;
+    padding: 18px 6%;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 21px;
+    font-weight: 700;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    gap: 22px;
+    flex-wrap: wrap;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 nav a:hover {
@@ -39,21 +45,28 @@ nav a:hover {
 }
 
 .hero {
-    min-height: 500px;
+    min-height: 510px;
     display: flex;
     align-items: center;
-    padding: 60px;
-    background-color: #e8f5e9;
+    padding: 70px 8%;
+    background: linear-gradient(135deg, #e8f5e9, #f5fff6);
 }
 
 .hero-text {
-    max-width: 650px;
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
 .hero h1 {
-    font-size: 55px;
-    line-height: 1.1;
-    margin-bottom: 25px;
+    font-size: clamp(42px, 7vw, 68px);
+    line-height: 1.08;
+    margin: 16px 0 25px;
 }
 
 .hero h1 span {
@@ -63,60 +76,393 @@ nav a:hover {
 
 .hero p {
     font-size: 18px;
-    line-height: 1.7;
+    max-width: 650px;
+    color: #555;
     margin-bottom: 30px;
 }
 
-.hero button {
-    border: none;
-    padding: 15px 30px;
-    background-color: #2e7d32;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.hero button:hover {
-    background-color: #1b5e20;
+.primary-button,
+.secondary-button,
+.small-button,
+.danger-button {
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary-button {
+    background: #2e7d32;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #1b5e20;
+}
+
+.secondary-button {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.secondary-button:hover {
+    background: #c8e6c9;
+}
+
+.small-button {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 12px;
+}
+
+.danger-button {
+    background: #c62828;
+    color: white;
+    padding: 8px 12px;
+}
+
+.full-button {
+    width: 100%;
+}
+
+.welcome-section {
+    padding: 25px 6%;
+}
+
+.welcome-message {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.welcome-message h2 {
+    color: #2e7d32;
 }
 
 .statistics {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 50px;
+    gap: 22px;
+    padding: 30px 6%;
+    flex-wrap: wrap;
 }
 
 .stat-card {
-    background-color: white;
-    width: 250px;
-    padding: 30px;
+    background: white;
+    min-width: 210px;
+    flex: 1;
+    max-width: 270px;
+    padding: 28px;
     text-align: center;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
 }
 
 .stat-card h2 {
-    font-size: 35px;
+    font-size: 38px;
     color: #2e7d32;
-    margin-bottom: 10px;
 }
 
 .about {
     text-align: center;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 40px;
+    max-width: 850px;
+    margin: 30px auto 70px;
+    padding: 40px 20px;
 }
 
 .about h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .about p {
-    line-height: 1.8;
-    color: #555;
+    color: #666;
+}
+
+.form-section,
+.page-section,
+.message-page {
+    min-height: calc(100vh - 75px);
+    padding: 55px 20px;
+}
+
+.form-container,
+.page-container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.form-container {
+    max-width: 650px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.wide-form {
+    max-width: 720px;
+}
+
+.form-container h1,
+.page-container > h1 {
+    margin-bottom: 8px;
+}
+
+.form-container > p,
+.page-container > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 55px;
+}
+
+.password-box button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 42px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.form-footer {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.form-footer a {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.filters {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.filters form {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 180px;
+}
+
+.filter-group label {
+    display: block;
+}
+
+.report-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+}
+
+.report-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.report-card h3 {
+    color: #2e7d32;
+}
+
+.status-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #eee;
+}
+
+.status-badge.pending {
+    background: #fff3cd;
+}
+
+.status-badge.in-progress {
+    background: #dbeafe;
+}
+
+.status-badge.resolved {
+    background: #d1fae5;
+}
+
+.report-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.report-actions form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.no-reports,
+.message-card,
+.analytics-card,
+.import-box {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    margin-bottom: 25px;
+}
+
+.no-reports {
+    text-align: center;
+}
+
+.analytics-card h2,
+.import-box h2 {
+    margin-bottom: 15px;
+}
+
+.analytics-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.analytics-row:last-child {
+    border-bottom: none;
+}
+
+.analytics-row strong {
+    color: #2e7d32;
+    font-size: 19px;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.chart-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.chart-card h3 {
+    margin-bottom: 10px;
+}
+
+.chart-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.message-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-card {
+    max-width: 600px;
+    text-align: center;
+}
+
+.message-card h1 {
+    margin-bottom: 12px;
+}
+
+.message-card p {
+    margin-bottom: 22px;
+    color: #666;
+}
+
+.import-box textarea {
+    margin: 12px 0;
+}
+
+@media (max-width: 800px) {
+    header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .filters form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
 }

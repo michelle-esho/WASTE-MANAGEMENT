@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">♻️ Waste Management</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/report">Report Waste</a>
+        <a href="/reports">Reports</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/login">Login</a>
+    </nav>
+</header>
+
+<main class="form-section">
+    <div class="form-container">
+        <h1>Create an Account</h1>
+        <p>Register to report and monitor waste problems.</p>
+
+        <form method="POST" action="/register">
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name"
+                   placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <div class="password-box">
+                <input type="password" id="password" name="password"
+                       placeholder="Enter your password" required>
+                <button type="button" onclick="togglePassword('password', this)">👁️</button>
+            </div>
+
+            <button class="primary-button full-button" type="submit">
+                Create Account
+            </button>
+        </form>
+
+        <p class="form-footer">
+            Already have an account?
+            <a href="/login">Login here</a>
+        </p>
+    </div>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

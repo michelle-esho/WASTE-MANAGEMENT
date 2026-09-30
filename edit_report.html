@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Waste</title>
+    <title>Edit Report</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -14,48 +14,41 @@
         <a href="/">Home</a>
         <a href="/reports">Reports</a>
         <a href="/analytics">Analytics</a>
-        <a href="/logout">Logout</a>
     </nav>
 </header>
 
 <main class="form-section">
     <div class="form-container wide-form">
-        <h1>Report a Waste Problem</h1>
-        <p>Provide details about the waste problem in your area.</p>
+        <h1>Edit Waste Report</h1>
 
-        <form method="POST" action="/submit-report">
+        <form method="POST" action="/edit-report">
+            <input type="hidden" name="report_id" value="{{REPORT_ID}}">
 
             <label for="location">Location</label>
             <input type="text" id="location" name="location"
-                   placeholder="e.g. Ikeja, Yaba, Agege" required>
+                   value="{{LOCATION}}" required>
 
             <label for="category">Waste Category</label>
             <select id="category" name="category" required>
-                <option value="">Select waste category</option>
-                <option>Plastic Waste</option>
-                <option>Food/Organic Waste</option>
-                <option>Illegal Dumping</option>
-                <option>Blocked Drainage</option>
-                <option>Electronic Waste</option>
-                <option>Other</option>
+                {{CATEGORY_OPTIONS}}
             </select>
 
             <label for="description">Description</label>
             <textarea id="description" name="description"
-                      rows="6"
-                      placeholder="Describe the waste problem..."
-                      required></textarea>
+                      rows="6" required>{{DESCRIPTION}}</textarea>
 
-            <label for="priority">Priority Level</label>
+            <label for="priority">Priority</label>
             <select id="priority" name="priority" required>
-                <option value="">Select priority</option>
-                <option>Low</option>
-                <option>Medium</option>
-                <option>High</option>
+                {{PRIORITY_OPTIONS}}
+            </select>
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                {{STATUS_OPTIONS}}
             </select>
 
             <button class="primary-button full-button" type="submit">
-                Submit Waste Report
+                Save Changes
             </button>
         </form>
     </div>

@@ -1,90 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Waste Management System</title>
-
     <link rel="stylesheet" href="/static/style.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">
-            ♻️ Waste Management
-        </div>
+<header>
+    <div class="logo">♻️ Waste Management</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/report">Report Waste</a>
+        <a href="/reports">Reports</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Report Waste</a>
-            <a href="#">Reports</a>
-            <a href="#">Login</a>
-        </nav>
-    </header>
-
-
-    <section class="hero">
-
-        <div class="hero-text">
-
-            <h1>
-                Keep Your Community
-                <span>Clean & Healthy</span>
-            </h1>
-
-            <p>
-                Report waste problems in your area and help
-                create a cleaner and healthier environment.
-            </p>
-
-            <button>
-                Report Waste
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section class="statistics">
-
-        <div class="stat-card">
-            <h2>0</h2>
-            <p>Total Reports</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>0</h2>
-            <p>Pending Reports</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>0</h2>
-            <p>Resolved Reports</p>
-        </div>
-
-    </section>
-
-
-    <section class="about">
-
-        <h2>About Our System</h2>
-
+<section class="hero">
+    <div class="hero-text">
+        <span class="eyebrow">COMMUNITY CLEANLINESS PLATFORM</span>
+        <h1>Keep Your Community <span>Clean & Healthy</span></h1>
         <p>
-            The Waste Management Reporting System allows residents
-            to report waste problems, track the progress of their
-            reports and help authorities identify areas that need
-            attention.
+            Report waste problems, track their progress and use data
+            to identify areas that need attention.
         </p>
+        <div class="hero-buttons">
+            <a href="/report" class="primary-button">Report Waste</a>
+            <a href="/analytics" class="secondary-button">View Analytics</a>
+        </div>
+    </div>
+</section>
 
-    </section>
+<section class="welcome-section">
+    {{WELCOME_MESSAGE}}
+</section>
 
+<section class="statistics">
+    <div class="stat-card">
+        <h2>{{TOTAL_REPORTS}}</h2>
+        <p>Total Reports</p>
+    </div>
+    <div class="stat-card">
+        <h2>{{PENDING_REPORTS}}</h2>
+        <p>Pending Reports</p>
+    </div>
+    <div class="stat-card">
+        <h2>{{RESOLVED_REPORTS}}</h2>
+        <p>Resolved Reports</p>
+    </div>
+</section>
 
-    <script src="/static/script.js"></script>
+<section class="about">
+    <h2>About the System</h2>
+    <p>
+        The Waste Management Reporting and Monitoring System provides
+        a digital way for residents to report waste problems and manage
+        submitted reports. The system stores reports in SQLite and
+        provides search, filtering, status tracking and analytics.
+    </p>
+</section>
 
+<script src="/static/script.js"></script>
 </body>
-
 </html>

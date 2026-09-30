@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Reports</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">♻️ Waste Management</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/report">Report Waste</a>
+        <a href="/reports">Reports</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<main class="page-section">
+    <div class="page-container">
+        <h1>My Waste Reports</h1>
+        <p>Search, filter and manage your submitted reports.</p>
+
+        <div class="filters">
+            <form method="GET" action="/reports">
+                <div class="filter-group">
+                    <label for="location">Search Location</label>
+                    <input type="text" id="location" name="location"
+                           value="{{SEARCH_LOCATION}}"
+                           placeholder="e.g. Ikeja">
+                </div>
+
+                <div class="filter-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="">All Statuses</option>
+                        {{STATUS_FILTER_OPTIONS}}
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority">
+                        <option value="">All Priorities</option>
+                        {{PRIORITY_FILTER_OPTIONS}}
+                    </select>
+                </div>
+
+                <button class="primary-button" type="submit">
+                    Search / Filter
+                </button>
+            </form>
+        </div>
+
+        {{REPORTS}}
+
+        <div class="import-box">
+            <h2>Import Reports from JSON</h2>
+            <p>Paste a JSON array of report objects below.</p>
+            <form method="POST" action="/import-json">
+                <textarea name="json_data" rows="8"
+                          placeholder='[{"location":"Ikeja","category":"Plastic Waste","description":"Waste beside road","priority":"High","status":"Pending"}]'></textarea>
+                <button class="secondary-button" type="submit">Import JSON</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[
+    {
+        "location": "Ikeja",
+        "category": "Illegal Dumping",
+        "description": "Large amount of waste dumped beside the road.",
+        "priority": "High",
+        "status": "Pending"
+    },
+    {
+        "location": "Yaba",
+        "category": "Plastic Waste",
+        "description": "Plastic bottles and nylon are scattered around the area.",
+        "priority": "Medium",
+        "status": "In Progress"
+    },
+    {
+        "location": "Agege",
+        "category": "Blocked Drainage",
+        "description": "Drainage is blocked by accumulated waste.",
+        "priority": "High",
+        "status": "Resolved"
+    }
+]

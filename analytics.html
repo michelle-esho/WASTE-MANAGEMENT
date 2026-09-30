@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">♻️ Waste Management</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/report">Report Waste</a>
+        <a href="/reports">Reports</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<main class="page-section">
+    <div class="page-container">
+
+        <h1>Waste Management Analytics</h1>
+        <p>Statistics and visual analysis of submitted waste reports.</p>
+
+        <section class="statistics analytics-stats">
+            <div class="stat-card">
+                <h2>{{TOTAL_REPORTS}}</h2>
+                <p>Total Reports</p>
+            </div>
+            <div class="stat-card">
+                <h2>{{PENDING_REPORTS}}</h2>
+                <p>Pending</p>
+            </div>
+            <div class="stat-card">
+                <h2>{{IN_PROGRESS_REPORTS}}</h2>
+                <p>In Progress</p>
+            </div>
+            <div class="stat-card">
+                <h2>{{RESOLVED_REPORTS}}</h2>
+                <p>Resolved</p>
+            </div>
+        </section>
+
+        <div class="analytics-card">
+            <h2>Areas With Most Waste Reports</h2>
+            {{LOCATION_ANALYTICS}}
+        </div>
+
+        <div class="analytics-card">
+            <h2>Reports By Waste Category</h2>
+            {{CATEGORY_ANALYTICS}}
+        </div>
+
+        <div class="analytics-card">
+            <h2>Reports By Priority</h2>
+            {{PRIORITY_ANALYTICS}}
+        </div>
+
+        <div class="analytics-card">
+            <h2>Matplotlib Charts</h2>
+            {{CHARTS}}
+        </div>
+
+    </div>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
